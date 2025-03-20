@@ -1,0 +1,80 @@
+
+project and code Expain
+
+1-- first of all we have html input fields  and form select with help of javascript DOM
+
+
+const form = document.getElementById('form');
+const nameInput = document.getElementById('exampleInputName');
+const emailInput = document.getElementById('exampleInputEmail1');
+const passwordInput = document.getElementById('exampleInputPassword1');
+const strengthMeter = document.getElementById('strength');
+const progressBar = document.getElementById('progress-bar');
+const sumbitButton = document.getElementById('submit-button');
+
+
+2-- Password Strength Check
+
+when user enter password then this check password and update strenght meter
+
+
+passwordInput.addEventListener('input', () => {})
+
+then some rules for strong password
+
+const rules = [
+    { regex: /(?=.*[A-Z])/, message: 'At least one uppercase letter' },
+    { regex: /(?=.*[a-z])/, message: 'At least one lowercase letter' },
+    { regex: /(?=.*\d)/, message: 'At least one number' },
+    { regex: /(?=.*[!@#$%^&*])/, message: 'At least one special character' },
+    { regex: /^.{8,}$/, message: 'At least 8 characters long' }
+];
+
+this rules check uppercase lovercase number and lenght
+
+
+3-- score this calculate
+
+
+let score = 0;
+rules.forEach(rule => {
+    if (rule.regex.test(passwordInput.value)) {
+        score++;
+    }
+});
+
+if password rules pass then score will be increase use score progress also will be update if password is strenght then progress will be full
+
+form validation check
+
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+})
+
+use e.preventDefault()
+beacouse when use click submit form then page will be not reload
+
+
+const name = nameInput.value;
+const email = emailInput.value;
+const password = passwordInput.value;
+  get inputes 
+
+
+
+  if credential is true
+  if (name === 'Bilal' && email === 'bilal@gmail.com' && password === 'Bilal@123') {
+    window.open ('https://github.com/iMuhammadbilal', '_blank'); // open GitHub in new tab
+then open userguthub accout in new tab
+
+if not ture 
+else {
+    alert('Invalid Credentials!'); // Show error message
+}
+
+🔥 Final Summary
+✔ Jab user password likhta hai, to password strength meter update hota hai.
+✔ Jab submit button dabaya jata hai, to form validation hoti hai.
+✔ Agar correct name, email aur password enter kare, to GitHub account open hota hai.
+✔ Agar galat credentials dale, to alert message show hota hai.
