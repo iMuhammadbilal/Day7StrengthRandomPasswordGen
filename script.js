@@ -46,6 +46,8 @@ passwordInput.addEventListener('input', () => {
 
     rules.forEach(rule => {
         if (rule.regex.test(passwordInput.value)) {
+            console.log(passwordInput.value);
+            
             score++;
         }
     });
